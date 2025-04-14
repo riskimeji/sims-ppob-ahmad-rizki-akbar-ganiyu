@@ -77,7 +77,6 @@ class AuthController extends BaseController
             ]
             ]);
             $body = json_decode($response->getBody(), true);
-            // dd($body);
             if($body['status'] != 0){
                 return redirect()->to('/register')->with('message_error', $body['message']);
             }else{
@@ -86,7 +85,7 @@ class AuthController extends BaseController
     }
     public function logout(){
         session()->destroy();
-    return redirect()->to('/');
+        return redirect()->to('/');
     }
 
 }

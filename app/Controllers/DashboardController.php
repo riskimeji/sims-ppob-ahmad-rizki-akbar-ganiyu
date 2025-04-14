@@ -185,7 +185,6 @@ class DashboardController extends BaseController
             $filePath = $file->getTempName();
             $fileName = $file->getName();
         
-            // Buat file CURLFile
             $cfile = new \CURLFile($filePath, $mime, $fileName);
         
             $postfields = ['file' => $cfile];
